@@ -1,6 +1,6 @@
 # Kubernetes Container Setup
 
-Ubuntu 기반 Master 및 Worker Node에 containerd, Kubernetes v1.29, Flannel을 설치한다.
+Ubuntu 기반 Master 및 Worker Node에 containerd, Kubernetes v1.28, Flannel을 설치한다.
 
 **실행 위치:** 1-3단계는 Master/Worker 공통, 4-5단계는 Master, 6단계는 Worker에서 실행한다.
 
@@ -79,13 +79,13 @@ sudo apt-get install -y apt-transport-https ca-certificates curl gpg
 sudo mkdir -p -m 755 /etc/apt/keyrings
 ```
 
-### Kubernetes v1.29 repository
+### Kubernetes v1.28 repository
 
 ```bash
-curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key \
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key \
   | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 
-echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' \
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' \
   | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ```
 
@@ -97,7 +97,7 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
-> 다른 Kubernetes minor version을 사용할 경우 Repository URL의 `v1.29`를 두 곳 모두 변경한다.
+> 다른 Kubernetes minor version을 사용할 경우 Repository URL의 `v1.28`를 두 곳 모두 변경한다.
 
 ## 4. Initialize Kubernetes Cluster (Master)
 

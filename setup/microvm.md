@@ -11,7 +11,7 @@
 | 장치 | Raspberry Pi 4 / Raspberry Pi 5 (ARM64) |
 | RPi4 Host OS | Ubuntu 22.04 |
 | RPi4 Host Kernel | `5.15.0-1105-raspi` |
-| RPi5 Host Kernel | '6.8.0-1044-raspi' |
+| RPi5 Host Kernel | `6.8.0-1044-raspi` |
 | Kata Containers | `3.24.0` |
 | Kata Guest Kernel | `6.12.47` |
 | nerdctl | `2.2.1` |

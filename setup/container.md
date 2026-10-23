@@ -2,7 +2,7 @@
 
 Ubuntu 기반 Master 및 Worker Node에 containerd, Kubernetes v1.29, Flannel을 설치한다.
 
-**실행 위치:** 1~3단계는 Master&Worker 공통, 4~5단계는 Master, 6단계는 Worker에서 실행한다.
+**실행 위치:** 1-3단계는 Master&Worker 공통, 4-5단계는 Master, 6단계는 Worker에서 실행한다.
 
 ## 1. Network 및 Kernel 설정 (Master / Worker)
 

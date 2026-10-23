@@ -38,7 +38,7 @@ sudo cp /etc/fstab /etc/fstab.bak
 sudo sed -i -E '/^[[:space:]]*[^#].*[[:space:]]swap[[:space:]]/ s/^/# /' /etc/fstab
 ```
 
-### Raspberry Pi cgroup (필요 시)
+### Raspberry Pi cgroup
 
 `/boot/firmware/cmdline.txt` 파일의 **기존 한 줄 끝에** 다음 옵션을 추가한다.
 

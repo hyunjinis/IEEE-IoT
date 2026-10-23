@@ -2,7 +2,7 @@
 
 Ubuntu 기반 Master 및 Worker Node에 containerd, Kubernetes v1.29, Flannel을 설치한다.
 
-**실행 위치:** 1~3단계는 Master/Worker 공통, 4~5단계는 Master, 6단계는 Worker에서 실행한다.
+**실행 위치:** 1-3단계는 Master/Worker 공통, 4-5단계는 Master, 6단계는 Worker에서 실행한다.
 
 ## 1. Network 및 Kernel 설정 (Master / Worker)
 
@@ -38,7 +38,7 @@ sudo cp /etc/fstab /etc/fstab.bak
 sudo sed -i -E '/^[[:space:]]*[^#].*[[:space:]]swap[[:space:]]/ s/^/# /' /etc/fstab
 ```
 
-### Raspberry Pi cgroup (필요 시)
+### Raspberry Pi cgroup
 
 `/boot/firmware/cmdline.txt` 파일의 **기존 한 줄 끝에** 다음 옵션을 추가한다.
 
@@ -161,7 +161,7 @@ kubectl get pods -A -o wide
 
 ### Create `p1.yaml`
 
-다음 내용을 `p1.yaml`로 저장한다. 같은 파일은 [`p1.yaml`](p1.yaml)에서도 확인할 수 있다.
+다음 내용을 `p1.yaml`로 저장한다. 
 
 ```yaml
 apiVersion: v1
@@ -189,8 +189,6 @@ spec:
       operator: "Exists"
       effect: "NoSchedule"
 ```
-
-> `hostPID: true`와 `privileged: true`는 실험용으로 호스트 PID 네임스페이스 접근과 높은 권한이 필요한 경우 사용하는 설정이다. `jjong2/all:latest` 이미지가 대상 장치의 CPU 아키텍처를 지원해야 한다.
 
 ### Set Node Label
 
